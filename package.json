@@ -1,0 +1,34 @@
+{
+  "name": "iotty",
+  "version": "1.0.0",
+  "description": "Share your terminal into web applications",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/micooz/iotty"
+  },
+  "main": "lib/iotty.js",
+  "bin": {
+    "iotty": "lib/cli-wrapper.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iojs",
+    "tty",
+    "iotty",
+    "webtty",
+    "nodejs"
+  ],
+  "author": {
+    "name": "Micooz",
+    "email": "micooz@hotmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3",
+    "q": "^1.4.1",
+    "shelljs": "^0.5.3",
+    "socket.io": "^1.3.6"
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iotty</title>
+  <style>
+    body {margin: 0; background-color: #000}
+    .tty {
+      color: #fff;
+      padding: 10px;
+      margin: 0;      
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="tty">loading...</div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io();
+    var div = document.body.children[0];
+    var stream_data = '';
+    
+    socket.on('iotty', function(buffer) {
+      var cmdline = buffer.cmdline;
+      document.title = cmdline;
+      
+      var str = buffer.data;
+      str = str.replace(/\n/ig, '<br>')
+               .replace(/\r/ig, '<br>')
+               .replace(/\s/ig, '&nbsp;');
+      stream_data += str;
+    });
+    
+    socket.on('iotty_end', function() {
+      div.innerHTML = stream_data;
+      stream_data = '';
+    });
+    
+    socket.on('reconnecting', function() {
+      document.title = 'reconnecting...';
+    });
+    
+    socket.on('reconnect_error', function(error) {
+      // div.innerHTML = 'reconnecting...failed';
+    });
+  </script>
+</body>
+</html>
