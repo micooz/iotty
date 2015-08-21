@@ -2,6 +2,8 @@
 
 iotty is a simple command line tool that puts your terminal screen into web applications.
 
+![][1]
+
 # Installtion
 
 You can download the latest source files from the [Releases](https://github.com/micooz/iotty/releases) page.
@@ -44,3 +46,6 @@ Micooz: micooz@hotmail.com
 # License
 
 The MIT License
+
+
+  [1]: iotty.gif
