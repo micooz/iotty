@@ -1,6 +1,6 @@
 {
   "name": "iotty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Share your terminal into web applications",
   "repository": {
     "type": "git",
